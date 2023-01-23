@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: ` <div class="app">Hello Angular!</div> `,
+  template: ` 
+  <div class="app">
+    <app-donut-list></app-donut-list>
+  </div> 
+              `,
   styles: [
     `
       .app {
