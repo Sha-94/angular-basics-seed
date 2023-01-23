@@ -1,11 +1,5 @@
 <div>
-  <div class="donut-card">
-    <img
-      src="/assets/img/{{ donut.icon }}.svg"
-      [alt]="donut.name"
-      class="donut-card-icon"
-    />
-    {{ donut.name }}
-    {{ donut.price }}
-  </div>
+  <app-donut-card [donut]="donuts[0]"></app-donut-card>
+  <app-donut-card [donut]="donuts[1]"></app-donut-card>
+  <app-donut-card [donut]="donuts[2]"></app-donut-card>
 </div>

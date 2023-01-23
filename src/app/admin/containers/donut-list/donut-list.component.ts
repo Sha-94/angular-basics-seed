@@ -4,10 +4,9 @@ import { Donut } from '../../models/donut.model';
 @Component({
   selector: 'app-donut-list',
   templateUrl: './donut-list.component.html',
-  styles: [],
+  styleUrls: [],
 })
 export class DonutListComponent implements OnInit {
-  donut!: Donut;
   donuts!: Donut[];
   constructor() {}
 
@@ -24,6 +23,7 @@ export class DonutListComponent implements OnInit {
         id: '3u90K1',
         name: 'Glazed Fudge',
         icon: 'glazed-fudge',
+        promo: true,
         price: 129,
         description: 'stick-perfection',
       },
@@ -35,7 +35,5 @@ export class DonutListComponent implements OnInit {
         description: 'For the pure chocoholic',
       },
     ];
-
-    this.donut = this.donuts[0];
   }
 }
