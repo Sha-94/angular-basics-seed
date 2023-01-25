@@ -1,7 +1,5 @@
-$primaryColor: #c14583;
-$secondaryColor:#01a3a4;
-$tertiaryColor: #6E005E;
-$quaternaryColor: #f7f7f7;
+@import "src/styles/variables";
+@import "src/styles/mixins";
 
 .donut-card {
   display: flex;

@@ -1,3 +1,7 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+
 * {
   font-family: "Patua One", sans-serif;
   box-sizing: border-box;
@@ -80,6 +84,10 @@ label {
   }
 }
 
+.formError{
+  font-size: 12px;
+  color: $errorColor
+}
 //  Angular Related Styles
 form .ng-invalid.ng-touched {
   background: #ffe7e7;
