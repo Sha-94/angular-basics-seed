@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Donut } from '../../models/donut.model';
+import { Promo } from '../../models/constants/promo.enum';
 
 @Component({
   selector: 'app-donut-list',
@@ -23,17 +24,37 @@ export class DonutListComponent implements OnInit {
         id: '3u90K1',
         name: 'Glazed Fudge',
         icon: 'glazed-fudge',
-        promo: true,
+        promo: Promo.NEW,
         price: 129,
-        description: 'stick-perfection',
+        description: 'Sticky Perfection',
       },
       {
         id: 'x0z0As',
         name: 'Caramel Swirl',
         icon: 'caramel-swirl',
         price: 119,
-        description: 'For the pure chocoholic',
+        description: 'Caramel',
+      },
+      {
+        id: 'g0r049',
+        name: 'Sour Supreme',
+        icon: 'sour-supreme',
+        price: 129,
+        promo: Promo.LIMITED,
+        description: 'For the sour advocate.',
+      },
+      {
+        id: '8f5g2h',
+        name: 'Zesty Lemon',
+        icon: 'zesty-lemon',
+        price: 169,
+        promo: Promo.LIMITED,
+        description: 'Its a zest fest',
       },
     ];
+  }
+
+  public trackById(index: number, value: Donut) {
+    return value.id;
   }
 }

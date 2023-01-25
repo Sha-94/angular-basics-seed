@@ -1,7 +1,12 @@
+$primaryColor: #c14583;
+$secondaryColor:#01a3a4;
+$tertiaryColor: #6E005E;
+$quaternaryColor: #f7f7f7;
+
 .donut-card {
   display: flex;
   align-items: center;
-  background: #f7f7f7;
+  background: $quaternaryColor;
   border-radius: 5px;
   margin-bottom: 5px;
   padding: 5px 15px;
@@ -13,9 +18,28 @@
   &-name {
     font-size: 16px;
   }
+  &-label {
+    &-new{
+      border: 1px solid $primaryColor;
+      color: $primaryColor;
+      border-radius: 4px;
+      padding: 0 4px;
+      margin-left: 5px;
+      font-size: 12px;
+    }
+
+    &-limited{
+      border: 1px solid $tertiaryColor;
+      color: $tertiaryColor;
+      border-radius: 4px;
+      padding: 0 4px;
+      margin-left: 5px;
+      font-size: 12px;
+    }
+  }
   &-price {
     font-size: 14px;
-    color: #c14583;
+    color: $primaryColor;
   }
   &-icon {
     width: 50px;
