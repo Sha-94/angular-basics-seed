@@ -1,7 +1,7 @@
 import { Promo } from "./constants/promo.enum";
 
 export interface Donut {
-  id: string;
+  id?: string;
   name: string;
   icon: string;
   price: number;
