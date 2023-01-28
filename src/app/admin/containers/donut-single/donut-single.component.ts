@@ -20,7 +20,7 @@ export class DonutSingleComponent implements OnInit {
     this.donut = this.donutService.getDonutById(id);
   }
 
-  public submit(donut: Donut){
-    console.log('donut recieved by parentt', donut);
+  public updateDonut(donut: Donut){
+    this.donutService.updateDonut(donut);
   }
 }

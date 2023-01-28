@@ -2,6 +2,8 @@ import { ViewChild } from '@angular/core';
 import { EventEmitter, AfterViewInit, Component, OnInit, Input, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Donut } from '../../models/donut.model';
+import { Promo } from '../../models/constants/promo.enum';
+
 
 @Component({
   selector: 'app-donut-form',
@@ -11,8 +13,9 @@ import { Donut } from '../../models/donut.model';
 export class DonutFormComponent implements OnInit, AfterViewInit {
   @Output() onSubmit = new EventEmitter<Donut>();
   @Input('donut') donut!: Donut;
+  public PROMO = Promo;
 
-  icons: string[] = [
+  public icons: string[] = [
     'caramel-swirl',
     'glazed-fudge',
     'just-chocolate',
@@ -22,6 +25,7 @@ export class DonutFormComponent implements OnInit, AfterViewInit {
     'zesty-lemon'
   ]
   ngOnInit(){
+    this.donut = this.donut ?? {name: '', icon: '', price: 0, description:''}
   }
 
   ngAfterViewInit(){

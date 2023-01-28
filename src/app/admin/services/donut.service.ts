@@ -55,8 +55,22 @@ export class DonutService {
   }
 
   public getAllDonuts(): Donut[]{
+    console.log('Getting Donuts: ', this.donuts);
     return this.donuts;
+  }
 
+  public addDonut(newDonut: Donut): void{
+    this.donuts = [...this.donuts, newDonut];
+    console.log('Added New Donut: ', newDonut);
+  }
+
+  public updateDonut(newDonut: Donut): void {
+    this.donuts = this.donuts.map(donut => {
+      if(donut.id === newDonut.id){
+        return newDonut;
+      }
+      return donut;
+    });
   }
 
 

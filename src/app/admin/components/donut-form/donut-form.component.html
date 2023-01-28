@@ -9,7 +9,7 @@
   </label>
   <label>
     <span>Icon</span>
-    <select name="icon" class="input input--select" required [ngModel]="donut.icon " #icon="ngModel">
+    <select name="icon" class="input input--select" required [ngModel]="donut.icon" #icon="ngModel">
       <option *ngFor="let icon of icons" [ngValue]="icon"> {{ icon }}</option> 
     </select>
     <ng-container *ngIf="icon.invalid && icon.touched">
@@ -28,15 +28,15 @@
   <div class="donut-form-radios">
     <p class="donut-form-radios-label">Promo </p>
     <label>
-      <input type="radio" name="promo" [value]="undefined" required [ngModel]="donut.promo"/>
+      <input type="radio" name="promo" [value]="undefined"  [ngModel]="donut.promo"/>
       <span>None</span>
     </label>
     <label>
-      <input type="radio" name="promo" [value]="'new'" required [ngModel]="donut.promo"/>
+      <input type="radio" name="promo" [value]="PROMO.NEW"  [ngModel]="donut.promo"/>
       <span>New</span>
     </label>
     <label>
-      <input type="radio" name="promo" [value]="'limited'" required [ngModel]="donut.promo"/>
+      <input type="radio" name="promo" [value]="PROMO.LIMITED" [ngModel]="donut.promo"/>
       <span>Limited</span>
     </label>
   </div>  

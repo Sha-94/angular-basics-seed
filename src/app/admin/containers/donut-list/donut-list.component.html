@@ -1,11 +1,16 @@
 <div>
   <ng-container *ngIf="donuts.length > 0; else soldOutDonuts">
-    <app-donut-card
-      *ngFor="let donut of donuts; trackBy: trackById"
-      [donut]="donut"
-    ></app-donut-card>
+    <ng-container *ngIf="!isFormVisible; else donutForm" >
+      <app-donut-card *ngFor="let donut of donuts; trackBy: trackById"[donut]="donut"></app-donut-card>
+      <button class="btn btn--green" (click)="toggleFormVisibility()">Add Donut</button>
+    </ng-container>  
+   
   </ng-container>
   <ng-template #soldOutDonuts>
     <p>Donuts are sold out</p>
+  </ng-template>
+
+  <ng-template #donutForm>
+    <app-donut-form (onSubmit)="submit($event)"></app-donut-form>
   </ng-template>
 </div>
