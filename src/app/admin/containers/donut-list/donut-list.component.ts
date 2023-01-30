@@ -11,10 +11,16 @@ import { DonutService } from '../../services/donut.service';
 export class DonutListComponent implements OnInit {
   public donuts!: Donut[];
   public isFormVisible!: boolean; 
+  public _isLoading: boolean = true;
+
+  public get isLoading(): boolean{
+    return this._isLoading;
+  }
 
   constructor(private donutService: DonutService) {}
 
   ngOnInit(): void {
+    this.isFormVisible = false;
     this.initList();
   }
 
@@ -24,20 +30,26 @@ export class DonutListComponent implements OnInit {
 
   public submit(donut:Donut){
        this.addDonut(donut);
-       this.initList();
   }
 
   private initList(){
     this.getDonuts();
-    this.isFormVisible = false;
   }
 
   private getDonuts(): void{
-    this.donuts = this.donutService.getAllDonuts();
+    this.donutService.getAllDonuts().subscribe(donuts => {
+      this.donuts = donuts
+      this._isLoading = false;
+    });
   }
 
   private addDonut(donut: Donut){
-    this.donutService.addDonut(donut);
+    this._isLoading = true;
+    this.donutService.addDonut(donut).subscribe(donut => {
+      this._isLoading = false; 
+      this.initList();
+      this.toggleFormVisibility();
+    });
   }
 
   public onAdd(){

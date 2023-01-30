@@ -45,46 +45,6 @@
       "promo": "New",
       "description": "new",
       "id": "uuuuuuu"
-    },
-    {
-      "name": "Strawberry Cream",
-      "icon": "strawberry-glaze",
-      "price": 622,
-      "promo": "New",
-      "description": "Very expensive\n",
-      "id": "kL093Dn"
-    },
-    {
-      "name": "Double Trouble Chocale",
-      "icon": "just-chocolate",
-      "price": 400,
-      "promo": "Limited",
-      "description": "Lots of chocolate",
-      "id": "JKGvftp"
-    },
-    {
-      "name": "Caramelt",
-      "icon": "caramel-swirl",
-      "price": 231,
-      "promo": "New",
-      "description": "Warm Caramel",
-      "id": "ACkzGof"
-    },
-    {
-      "name": "Vanilla",
-      "icon": "vanilla-sundae",
-      "price": 231,
-      "promo": "New",
-      "description": "no comment",
-      "id": "OSqfZGV"
-    },
-    {
-      "name": "Sour Hour",
-      "icon": "sour-supreme",
-      "price": 123,
-      "promo": "New",
-      "description": "Sour ",
-      "id": "evCCodW"
     }
   ]
 }
