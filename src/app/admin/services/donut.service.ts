@@ -47,14 +47,25 @@ export class DonutService {
     )
   }
 
-  public updateDonut(newDonut: Donut): void {
-    this.donuts = this.donuts.map(donut => {
-      if(donut.id === newDonut.id){
-        return newDonut;
-      }
-      return donut;
-    });
+  public updateDonut(newDonut: Donut): Observable<Donut> {
+    return this.httpClient.put<Donut>(`${this.URL}/${newDonut.id}`, newDonut).pipe(
+      tap(donut => {
+        this.donuts = this.donuts.map(item => {
+          if(item.id === newDonut.id){
+            return newDonut;
+          }
+          return item;
+        })
+      })
+    );
   }
 
+  public deleteDonut(id: string): Observable<Donut> {
+    return this.httpClient.delete<Donut>(`${this.URL}/${id}`).pipe(
+      tap( donut => {
+        this.donuts = this.donuts.filter(item => item.id != id );
+      })
+    )
+  }
 
 }

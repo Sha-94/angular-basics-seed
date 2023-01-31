@@ -59,4 +59,19 @@ export class DonutListComponent implements OnInit {
   public toggleFormVisibility(){
     this.isFormVisible = !this.isFormVisible;
   }
+
+  public removeDonut(donut: Donut){
+    let deleteConfirmed = confirm(`Are you sure you want to delete donut ${donut.id}?`);
+    let id = donut.id!;
+
+    if(deleteConfirmed){
+      this._isLoading = true;
+      this.donutService.deleteDonut(id).subscribe(() => {
+        this.initList();
+        
+      })
+    } else {
+      alert('Delete Cancelled.');
+    }
+  }
 }

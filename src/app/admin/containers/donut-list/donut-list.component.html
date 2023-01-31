@@ -6,7 +6,7 @@
 
   <ng-container *ngIf="!isLoading && donuts.length">
     <ng-container *ngIf="!isFormVisible; else donutForm" >
-      <app-donut-card *ngFor="let donut of donuts; trackBy: trackById"[donut]="donut"></app-donut-card>
+      <app-donut-card *ngFor="let donut of donuts; trackBy: trackById"[donut]="donut" (onRemove)="removeDonut($event)"></app-donut-card>
       <button class="btn btn--green" (click)="toggleFormVisibility()">Add Donut</button>
     </ng-container>  
    

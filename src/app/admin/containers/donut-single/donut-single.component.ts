@@ -21,6 +21,18 @@ export class DonutSingleComponent implements OnInit {
   }
 
   public updateDonut(donut: Donut){
-    this.donutService.updateDonut(donut);
+    this.donutService.updateDonut(donut).subscribe();
+  }
+
+  public removeDonut(donut: Donut){
+    let deleteConfirmed = confirm('Are you sure you want to delete donut?');
+
+    if(deleteConfirmed){
+      this.donutService.deleteDonut(donut.id!).subscribe(donut => {
+        console.log('Donut deleted: ', donut);
+      })
+    } else {
+      alert('Delete Cancelled.');
+    }
   }
 }
