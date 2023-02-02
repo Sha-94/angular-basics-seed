@@ -8,10 +8,9 @@ import { DonutListComponent } from './admin/containers/donut-list/donut-list.com
 import { DonutSingleComponent } from './admin/containers/donut-single/donut-single.component';
 
 const ROUTES: Routes = [
-  {path: 'donuts', component:DonutListComponent},
-  {path: 'donut', component: DonutSingleComponent},
-  {path: '', pathMatch:'full',  redirectTo:'donuts'}
-];
+  {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
+  {path: '', pathMatch: 'full', redirectTo: '/admin/donuts'}
+]
 
 @NgModule({
   declarations: [AppComponent],
